@@ -1,0 +1,65 @@
+﻿{
+	"type": "object",
+	"properties": {
+		"category": {
+			"type": "string",
+			"enum": [
+				"Foundations",
+				"Columns",
+				"Framings",
+				"Floors",
+				"Roofs",
+				"PipeCurves",
+				"DuctCurves",
+				"Conduit",
+				"CableTray",
+				"Lighting Fixtures",
+				"Lighting Devices",
+				"Mechanical Equipment",
+				"Electrical Equipment",
+				"PipeAccessory",
+				"DuctAccessory",
+				"Walls",
+				"Plumbing Fixtures",
+				"Doors",
+				"Windows",
+				"Ceilings",
+				"Furniture",
+				"Furniture Systems",
+				"Speciality Equipment"
+			],
+			"description": "The categories from wich the elements will be selected to be modified by overrides. Infer this from the users request."
+		},
+		"sharedParameter": {
+			"type": "string",
+			"enum": [
+				"SIMULATION",
+				"SIM_PART",
+				"LO_Building",
+				"LO_Level",
+				"LO_Zones",
+				"LO_Grid"
+			],
+			"description": "The shared parameter used to group elements from the category specified by the user. Infer this from the users request."
+		},
+		"elementQuantity": {
+			"type": "string",
+			"enum": [
+				"10",
+				"50",
+				"100",
+				"500",
+				"1000",
+				"5000",
+				"10000"
+
+			],
+			"description": "The limit of element to be modified by overrides. Infer this from the users request."
+		}
+	},
+	"required": [
+		"category",
+		"sharedParameter",
+		"elementQuantity"
+	]
+}
