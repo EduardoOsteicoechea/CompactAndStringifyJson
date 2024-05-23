@@ -1,0 +1,82 @@
+﻿{
+	"versionKey": "Dr1lDL/7dlrd3aqASVigI5U2lhcyD8F+SnkjEAjZZ3A=",
+	"Mode": 1,
+	"input": null,
+	"messages": [
+		{
+			"Text": "User message 1",
+			"Time": "19:12",
+			"Sender": "You",
+			"ToolCalls": null,
+			"ToolCallId": null
+		}
+		,
+		{
+			"errorMsg": null,
+			"success": true,
+			"isImage": false,
+			"textAnswers": [
+					"ChatBot response 1 (optional)"
+			],
+			"toolCalls": [],
+			"imageUrls": [],
+			"urlForUploadPDF": null
+		} 
+		,
+		{
+			"Text": "User message n... (optional)",
+			"Time": "19:12",
+			"Sender": "You",
+			"ToolCalls": null,
+			"ToolCallId": null
+		}
+		,
+		{
+			"errorMsg": null,
+			"success": true,
+			"isImage": false,
+			"textAnswers": [
+					"ChatBot response n... (optional)"
+			],
+			"toolCalls": [],
+			"imageUrls": [],
+			"urlForUploadPDF": null
+		} 
+	],
+ 
+	"tools": 
+	[
+	  {
+			"Name": "Tool-1-Name-Following-This-Sintaxis",
+			"Description": "Tool 1 action description.",
+			"Parameters": {
+				"type": "object",
+				"properties": {
+					"property_1_Name": {
+						"type": "string",
+						"enum": ["option_1", "option_2", "option_n"],
+						"description": "This property would be received by Andiamo as a parameter when the 'public override bool Execute(params object[] args)' method inherited from the 'ToolDefinition' class comming from the 'AvantLeap.RevitAI.Tool.Interfaces' namespace is executed. ------------------------------------------------------------------------------------------------------------  As you may know, this method overrides, the default 'public Result Execute(ExternalCommandData commandData, ref string message, ElementSet elements)' method in the AvantLeap's AIIntegrableExternalCommandSetup when the command is called from the ChatBot inside Revit. ------------------------------------------------------------------------------------------------------------ I would recommend to write the actual RevitAPI ExternalCommand code in a second class, named after this first class and just adding the word 'Command' as a suffix to the name. ------------------------------------------------------------------------------------------------------------ This second class would be called from both the default 'public Result Execute(ExternalCommandData commandData, ref string message, ElementSet elements)' and the 'public override bool Execute(params object[] args)' methods with their respective arguments variations.  ------------------------------------------------------------------------------------------------------------ In this way, the first class would contain both the command setup for Ribbon tab buttons, and for ChatBot integration, and the second class would contain the shared RevitAPI External Command Code. ------------------------------------------------------------------------------------------------------------ The following example property will show the format of the description."
+					},
+					"property_2_Name": {
+						"type": "string",
+						"enum": ["option_1", "option_2", "option_n"],
+						"description": "property_2 DESCRIPTION here (for example: The shared parameter used to group elements from the category specified by the user). INDICATION here: (for example: Always request this)."
+					},
+					"property_n_Name": {
+						"type": "string",
+						"enum": ["option_1", "option_2", "option_n"],
+						"description": "The second part of the description could be seen as an instruction for the AI model to respond in certain way to the user's prompt."
+					}
+				},
+				"required": ["property_1_Name", "property_n_Name","This will indicate to the AI model to allways return an argument from this properties according to the user's prompt","It's evident then, that the options enum must exist in each property to enable the model to provide it's corresponding argument."]
+			}
+	  	}
+	],
+ 
+ 
+	"image": false,
+	"imageStr": null,
+	"imageParams": null,
+	"pdfRequest": null,
+	"maskingParams": null
+ }
